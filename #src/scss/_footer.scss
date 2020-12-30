@@ -1,0 +1,67 @@
+.footer {
+  min-height: 50rem;
+  font-size: 14px;
+  color: #ffffff;
+  font-family: $headerFont;
+  background: linear-gradient(32.06deg, #43266e -55.63%, #6532ad 101.61%);
+  background-image: url(../img/footerbg.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  font-size: 2.1rem;
+  line-height: 143%;
+  letter-spacing: 0.14rem;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 6rem;
+
+    p {
+      font-size: 2.1rem;
+      line-height: 143%;
+
+      letter-spacing: 0.14rem;
+
+      color: #ffffff;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__contacts {
+    margin-right: 20rem;
+    margin-bottom: 5rem;
+  }
+
+  &__email {
+    margin-bottom: 4rem;
+    a {
+      color: #fff;
+    }
+  }
+
+  &__email::before {
+    content: url(../img/email.png);
+    margin-right: 1.5rem;
+    position: relative;
+    top: 1.5rem;
+  }
+
+  &__social {
+    img {
+      margin-right: 2.5rem;
+    }
+  }
+}
+
+.copyright {
+  margin-top: 7rem;
+  font-size: 1.6rem;
+  line-height: 187%;
+  letter-spacing: 0.12444rem;
+  color: #eaefef;
+}

@@ -1,0 +1,140 @@
+//жопа
+
+//этот миксин подключает шрифты из папки
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url('../fonts/#{$file_name}.woff') format('woff'),
+      url('../fonts/#{$file_name}.woff2') format('woff2');
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+@import 'fonts';
+//@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Playfair+Display:wght@300;400;600&display=swap');
+@import './normalize';
+//-------------------------------
+@import './vars';
+
+html {
+  font-size: 7px;
+  @media (min-width: 1600px) {
+    font-size: 10px;
+  }
+  @media (max-width: 800px) {
+    font-size: 6px;
+  }
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  font-size: 2rem;
+  font-family: $textFont;
+  color: $textColor;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 4.2rem;
+  line-height: 5rem;
+  letter-spacing: 0.233333rem;
+  font-weight: 600;
+  color: #43266e;
+
+  margin-bottom: 35px;
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-family: $headerFont;
+  color: $headerColor;
+  line-height: 1.2;
+  margin-bottom: 4rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+input[type='submit'] {
+  text-decoration: none;
+  background-color: $mainColor;
+  color: #fff;
+  font-family: $headerFont;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  border: 0;
+}
+
+input[type='submit']:hover {
+  background-color: darken($mainColor, 10%);
+}
+input[type='submit']:disabled {
+  background-color: rgb(180, 180, 180);
+  border: 0.3rem solid rgb(180, 180, 180);
+  border: 0;
+}
+
+img {
+  object-fit: contain;
+}
+
+a {
+  color: black;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+main img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 164rem;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+button {
+  border: 0;
+  text-decoration: none;
+  color: #fff;
+  padding: 18px 45px;
+  outline: none;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  font-size: 16px;
+  transition: 0.3s;
+  background-color: $mainColor;
+  font-family: $headerFont;
+  letter-spacing: 2px;
+}
+
+button:hover {
+  color: black;
+  background-color: #fff;
+}
+
+@import './header';
+@import './footer';
+@import './hamburger';
+@import './main';

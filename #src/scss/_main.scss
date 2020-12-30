@@ -1,0 +1,343 @@
+.main-block {
+  background-image: url(../img/mainbg.jpg);
+  height: 100vh;
+  max-height: 90rem;
+  min-height: 60rem;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      180deg,
+      #43266e 9.3%,
+      rgba(101, 50, 173, 0.0001) 132.26%
+    );
+    z-index: 1;
+  }
+
+  img {
+    z-index: 99;
+    margin: 8rem 0;
+    padding: 0 2rem;
+  }
+
+  p {
+    font-weight: bold;
+    font-size: 3.2rem;
+    line-height: 38px;
+    text-align: center;
+    letter-spacing: 0.177rem;
+    text-transform: uppercase;
+    z-index: 99;
+    padding: 0 2rem;
+    color: #ffffff;
+  }
+}
+
+.second-block {
+  display: flex;
+  position: relative;
+  background: black;
+  @media (max-width: $breakpoint1) {
+    flex-wrap: wrap;
+  }
+  //
+
+  &__lefttext {
+    flex: 0 0 100%;
+    @media (max-width: $breakpoint1) {
+      flex: auto;
+    }
+  }
+
+  &__leftbg {
+    background-image: url(../img/secondleft.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    // flex: 0 0 50%;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(139.65deg, #6532ad 1.98%, #43266e 112.09%);
+      mix-blend-mode: normal;
+      opacity: 0.9;
+      z-index: 0;
+    }
+    @media (max-width: $breakpoint1) {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    flex: 0 0 100%;
+    color: #fff;
+    font-size: 2.4rem;
+    line-height: 146%;
+    letter-spacing: 1.33333px;
+
+    transform: translate(0);
+    p {
+      z-index: 99;
+    }
+
+    .container {
+      z-index: 99;
+    }
+  }
+  &__body {
+    width: 50%;
+    padding-right: 13.5rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    z-index: 99;
+    @media (max-width: $breakpoint1) {
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+
+  &__video {
+    flex: 0 0 50%;
+    transform: translateX(-100%);
+    background-image: url(../img/secondright.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: radial-gradient(
+        131.08% 128.35% at 48.5% 45.53%,
+        #7c3bd6 0%,
+        rgba(67, 38, 110, 0.94) 100%
+      );
+      mix-blend-mode: normal;
+      opacity: 0.85;
+      z-index: -1;
+    }
+
+    img {
+      z-index: 99;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    @media (max-width: $breakpoint1) {
+      flex: auto;
+      transform: translateX(0);
+      min-height: 50rem;
+    }
+  }
+}
+
+.join-block {
+  margin-top: 8.5rem;
+  margin-bottom: 8.5rem;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $breakpoint1) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__content {
+    font-size: 2.8rem;
+    line-height: 125%;
+    letter-spacing: 0.186667rem;
+    color: #43266e;
+    margin-top: 2rem;
+    max-width: 50%;
+    @media (max-width: $breakpoint1) {
+      max-width: 100%;
+    }
+    b {
+      font-weight: 600;
+    }
+  }
+  img {
+    margin-left: 7rem;
+    padding-right: 5rem;
+    @media (max-width: $breakpoint1) {
+      margin: 0 auto;
+      margin-bottom: 5rem;
+    }
+  }
+  button {
+    margin-top: 3rem;
+    font-size: 24px;
+  }
+  p {
+    margin-bottom: 4rem;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.377);
+  z-index: 999999;
+  overflow: auto;
+  &__window {
+    background-color: #fff;
+    padding: 2rem 4rem 1rem;
+    border-radius: 1rem;
+    margin: 0 auto;
+    margin-top: 10rem;
+    max-width: 52rem;
+    input {
+      display: block;
+      border: 0.4rem solid #43266e;
+      border-radius: 1rem;
+      width: 100%;
+      margin-bottom: 3rem;
+      padding: 1rem 2rem;
+      font-family: $textFont;
+
+      &::placeholder {
+        font-family: $textFont;
+      }
+    }
+    textarea {
+      display: block;
+      border: 0.4rem solid #43266e;
+      border-radius: 1rem;
+      width: 100%;
+      margin-bottom: 3rem;
+      padding: 1rem 2rem;
+      font-family: $textFont;
+
+      &::placeholder {
+        font-family: $textFont;
+      }
+    }
+  }
+}
+
+.full {
+  flex: 0 0 100%;
+  background: black;
+  height: 90vh;
+  transform: translate(0);
+}
+
+.video_wrapper {
+  display: none;
+}
+
+.video_wrapper,
+.videoIframe {
+  height: 100%;
+  width: 100%;
+}
+
+.close-video-btn {
+  position: absolute;
+  color: #fff;
+  background-color: #43266e;
+  padding: 1rem 3rem;
+  font-size: 3rem;
+  right: 0;
+  bottom: -6.4rem;
+  cursor: pointer;
+  &:hover {
+    background-color: #361e5a;
+  }
+}
+
+.ok {
+  border: 0.4rem solid green !important;
+}
+.error {
+  border: 0.4rem solid red !important;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.alert {
+  padding: 1rem 0 6rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.6rem;
+  color: green;
+}
